@@ -1,13 +1,12 @@
 # User Registration and Authentication System
 
-This project is a small web application built using Express.js and MongoDB to handle user registration, login, and user information retrieval. The application uses JWT for authentication and validation.
+This project is a small web application built using Express.js and MongoDB to handle user registration, login, and search users. The application uses JWT for authentication and validation.
 
 ## Features
 
 - User Registration: Register a new user with username, password, full name, gender, date of birth, and country.
 - User Login: Authenticate users and generate JWT tokens.
 - Search User: Search for a user by username or email.
-- Retrieve User Info: Retrieve full user information after login.
 
 ## Tech Stack
 
@@ -21,29 +20,31 @@ This project is a small web application built using Express.js and MongoDB to ha
 
 ```
 src
+├── config
+│   └── db.ts
 ├── controllers
 │   ├── authController.ts
 │   └── userController.ts
-├── middlewares
+├── middleware
 │   └── authMiddleware.ts
 ├── models
-│   └── userModel.ts
+│   └── User.ts
 ├── routes
 │   ├── authRoutes.ts
 │   └── userRoutes.ts
-├── utils
-│   ├── db.ts
-│   └── validation.ts
-├── app.ts
+├── schemas
+│   ├── loginSchema.ts
+│   └── registerSchema.ts
+├── index.ts
 .env
 ```
 
 ## Endpoints
 
-1. **User Registration**: `POST /api/auth/register`
-2. **User Login**: `POST /api/auth/login`
-3. **Search User**: `GET /api/users/search`
-4. **Retrieve User Info**: `GET /api/users/:id`
+1. **User Registration**: `POST /auth/register`
+2. **User Login**: `POST /auth/login`
+3. **Search User**: `GET /users/search`
+4. **Logout**: `GET /auth/logout`
 
 ## Getting Started
 
@@ -81,7 +82,7 @@ src
 ### Usage
 
 1. **Register a User**:
-   - Endpoint: `POST /api/auth/register`
+   - Endpoint: `POST /auth/register`
    - Body:
      ```json
      {
@@ -95,7 +96,7 @@ src
      ```
 
 2. **Login**:
-   - Endpoint: `POST /api/auth/login`
+   - Endpoint: `POST /auth/login`
    - Body:
      ```json
      {
@@ -105,13 +106,7 @@ src
      ```
 
 3. **Search User**:
-   - Endpoint: `GET /api/users/search?username=exampleuser`
-   - Headers:
-     ```json
-     {
-       "Authorization": "Bearer your_jwt_token"
-     }
-     ```
+   - Endpoint: `GET /api/users/search?search=username or email`
 
 4. **Retrieve User Info**:
    - Endpoint: `GET /api/users/:id`
