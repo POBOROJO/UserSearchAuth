@@ -130,7 +130,7 @@ Use Postman to test the APIs. Import the provided Postman collection to test the
 
 Watch the full video walkthrough to see the source codes, output, Postman results, and database interactions.
 
-[Video Walkthrough Link](https://www.youtube.com/watch?v=your_video_id)
+[Video Walkthrough Link](https://www.loom.com/share/c57ab71dc15a4bcfb82bf4e4bde324ce?sid=429085b1-59e8-4286-b3d9-72ad275b22bc)
 
 ## Contributing
 
