@@ -1,0 +1,5 @@
+node_modules
+dist
+.env
+code_context.sh
+code_context.txt
