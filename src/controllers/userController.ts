@@ -4,8 +4,13 @@ import { Request, Response } from "express";
 
 export const searchUser = async (req: Request, res: Response) => {
   try {
-    const {username} = req.query;
-    const user = await User.findOne({username: username}).select('-password');
+    const {search} = req.query;
+    const user = await User.findOne({
+      $or:[
+        { username: search },
+        { email: search }
+      ]
+    }).select('-password');
     if (!user) {
       return res.status(400).json({ message: "User not found" });
     }
