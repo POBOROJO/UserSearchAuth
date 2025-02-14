@@ -87,6 +87,7 @@ src
      ```json
      {
        "username": "exampleuser",
+       "email": "exampleuser@example.com",
        "password": "examplepassword",
        "fullName": "Example User",
        "gender": "Male",
@@ -100,7 +101,7 @@ src
    - Body:
      ```json
      {
-       "username": "exampleuser",
+       "email": "exampleuser@example.com",
        "password": "examplepassword"
      }
      ```
@@ -126,11 +127,3 @@ Use Postman to test the APIs. Import the provided Postman collection to test the
 Watch the full video walkthrough to see the source codes, output, Postman results, and database interactions.
 
 [Video Walkthrough Link](https://www.loom.com/share/c57ab71dc15a4bcfb82bf4e4bde324ce?sid=429085b1-59e8-4286-b3d9-72ad275b22bc)
-
-## Contributing
-
-Contributions are welcome! Please open an issue or submit a pull request.
-
-## License
-
-This project is licensed under the MIT License.
